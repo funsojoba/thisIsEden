@@ -1,0 +1,74 @@
+.photo-stack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.photo-stack__backing {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+
+.photo-stack__backing--1 {
+  transform: rotate(-3.5deg) translate(4%, 5%);
+  background: var(--gold-soft);
+}
+
+.photo-stack__backing--2 {
+  transform: rotate(2.5deg) translate(-4%, -1%);
+  background: var(--burgundy);
+  opacity: 0.85;
+}
+
+.photo-stack--cream .photo-stack__backing--1 {
+  background: var(--cream-soft);
+}
+
+.photo-stack--cream .photo-stack__backing--2 {
+  background: var(--gold);
+  opacity: 0.9;
+}
+
+.photo-stack__frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px -18px rgba(36, 16, 20, 0.45);
+}
+
+.photo-stack__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-stack__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(155deg, var(--blush) 0%, var(--cream-soft) 55%, var(--gold-soft) 100%);
+}
+
+.photo-stack__placeholder span {
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--burgundy);
+  opacity: 0.75;
+}
+
+.photo-stack__placeholder--matted {
+  padding: 2px;
+}
+
+.photo-stack__placeholder--matted img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 2px;
+}

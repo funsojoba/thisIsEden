@@ -1,0 +1,43 @@
+.rsvp__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(48px, 8vw, 120px);
+  align-items: center;
+}
+
+.rsvp__heading {
+  font-size: clamp(40px, 5vw, 60px);
+  color: var(--burgundy);
+}
+
+.rsvp__body {
+  font-family: var(--font-serif);
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.7;
+  color: var(--ink);
+  max-width: 52ch;
+  margin: 26px 0 38px;
+}
+
+.rsvp__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.rsvp__photo {
+  max-width: 420px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 860px) {
+  .rsvp__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rsvp__photo {
+    order: -1;
+    max-width: 320px;
+  }
+}

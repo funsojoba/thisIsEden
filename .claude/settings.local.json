@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_screenshot",
+      "Bash(curl -sL -o /private/tmp/claude-501/-Users-mac-Documents-Eden/ae11e8ba-7e0a-4be1-8b49-6ce9115095ca/scratchpad/full_sketch.png \"https://www.figma.com/api/mcp/asset/9d359cc4-77cb-4df6-938d-cd22851cf27e.png\")"
+    ]
+  }
+}
