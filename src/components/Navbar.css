@@ -9,10 +9,10 @@
 }
 
 .navbar--solid {
-  background: rgba(251, 244, 233, 0.94);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   padding: 16px 0;
-  box-shadow: 0 1px 0 var(--line);
+  box-shadow: 0 1px 0 var(--line-on-dark);
 }
 
 .navbar__inner {
@@ -23,14 +23,18 @@
 }
 
 .navbar__mark {
-  font-size: 30px;
-  color: var(--white);
-  transition: color 0.4s ease;
-  letter-spacing: 0.02em;
+  display: block;
+  flex-shrink: 0;
 }
 
-.navbar--solid .navbar__mark {
-  color: var(--burgundy);
+.navbar__mark img {
+  height: 48px;
+  width: auto;
+  transition: height 0.4s ease;
+}
+
+.navbar--solid .navbar__mark img {
+  height: 40px;
 }
 
 .navbar__links {
@@ -47,10 +51,6 @@
   color: var(--white);
   position: relative;
   transition: color 0.4s ease, opacity 0.2s ease;
-}
-
-.navbar--solid .navbar__links a {
-  color: var(--ink);
 }
 
 .navbar__links a:not(.navbar__gift):hover {
@@ -88,10 +88,6 @@
   width: 100%;
   background: var(--white);
   transition: transform 0.35s ease, opacity 0.35s ease, background 0.35s ease;
-}
-
-.navbar--solid .navbar__toggle span {
-  background: var(--ink);
 }
 
 .navbar__toggle--open span:nth-child(1) {

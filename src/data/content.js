@@ -27,7 +27,6 @@ export const wedding = {
 export const nav = [
   { label: 'Home', href: '#hero' },
   { label: 'Our Story', href: '#story' },
-  { label: 'RSVP', href: '#rsvp-form' },
   { label: 'Schedule', href: '#schedule' },
 ];
 
@@ -55,32 +54,17 @@ export const groom = {
 
 export const message = {
   eyebrow: 'Message from the couple',
-  body: "We're beyond excited to share our special day with you! Please RSVP to let us know if you'll be attending in person, so we can reserve your seat, or joining virtually, in which case we'll send you a link. We'll share additional details as they become available.",
-  rsvpCta: { label: 'RSVP Here', href: '#rsvp-form' },
+  body: "We're beyond excited to share our special day with you! We'll share additional details as they become available.",
   giftCta: { label: 'Send us a gift', href: '#gift' },
 };
 
-// Placeholder RSVP form copy — client-side only for now (see RsvpForm.jsx).
-// Swap the deadline/contact details in here once they're locked in.
-export const rsvpForm = {
-  eyebrow: 'Kindly respond',
-  heading: 'RSVP',
-  intro:
-    "We've saved you a seat! Let us know if you'll be celebrating with us in person so we can finalise seating, catering, and all the little details.",
-  deadlineLabel: 'Please respond by',
-  deadlineDate: 'January 9th, 2027',
-  contactName: `${couple.groomFirstName} & ${couple.brideFirstName}`,
-  contactEmail: 'hello@tolulopeandfunso.com',
-  guestCap: 4,
-};
-
-// Placeholder gift details — swap in the real account numbers and registry
-// link whenever you have them (see GiftSection.jsx).
+// Placeholder gift details — swap in the real account numbers whenever you
+// have them (see GiftSection.jsx).
 export const gift = {
   eyebrow: 'With love',
   heading: 'Send a Gift',
   intro:
-    "Honestly, having you celebrate with us is gift enough. But if you'd like to bless us a little further, here's how — cash gifts below, or something from our registry.",
+    "Honestly, having you celebrate with us is gift enough. But if you'd like to bless us a little further, you can send a cash gift to either account below.",
   accounts: [
     {
       label: couple.groomFirstName,
@@ -95,12 +79,6 @@ export const gift = {
       accountNumber: '0987654321',
     },
   ],
-  registry: {
-    heading: 'Prefer a physical gift?',
-    note: "We've put together a small wishlist — pick anything from it and it'll find its way to us.",
-    label: 'View our registry',
-    url: 'https://www.thingstogetme.com/',
-  },
 };
 
 export const story = {

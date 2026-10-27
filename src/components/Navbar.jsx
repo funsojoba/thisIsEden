@@ -18,8 +18,8 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled || open ? 'navbar--solid' : ''}`}>
       <div className="container navbar__inner">
-        <a href="#hero" className="navbar__mark script" onClick={handleLinkClick}>
-          {couple.monogram}
+        <a href="#hero" className="navbar__mark" onClick={handleLinkClick} aria-label={`${couple.monogram} — back to top`}>
+          <img src="/images/logo.png" alt="" />
         </a>
 
         <nav className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>

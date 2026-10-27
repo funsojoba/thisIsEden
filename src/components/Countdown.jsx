@@ -33,10 +33,7 @@ export default function Countdown() {
           </div>
 
           <div className="countdown__ctas">
-            <a href={message.rsvpCta.href} className="btn btn-gold">
-              {message.rsvpCta.label}
-            </a>
-            <a href={message.giftCta.href} className="btn btn-outline">
+            <a href={message.giftCta.href} className="btn btn-gold">
               {message.giftCta.label}
             </a>
           </div>

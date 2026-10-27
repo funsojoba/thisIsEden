@@ -51,13 +51,6 @@ export default function GiftSection() {
             <BankCard key={account.label} account={account} index={index} copiedIndex={copiedIndex} onCopy={handleCopy} />
           ))}
 
-          <div className="gift-card gift-card--registry">
-            <span className="gift-card__label">{gift.registry.heading}</span>
-            <p className="gift-card__registry-note">{gift.registry.note}</p>
-            <a href={gift.registry.url} target="_blank" rel="noopener noreferrer" className="btn btn-gold gift-card__registry-cta">
-              {gift.registry.label} &nbsp;&#8599;
-            </a>
-          </div>
         </div>
       </div>
     </section>

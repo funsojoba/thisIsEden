@@ -2,8 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
 import AboutCouple from './components/AboutCouple';
-import RsvpSection from './components/RsvpSection';
-import RsvpForm from './components/RsvpForm';
+import MessageSection from './components/MessageSection';
 import GiftSection from './components/GiftSection';
 import OurStory from './components/OurStory';
 import Verse from './components/Verse';
@@ -17,8 +16,7 @@ export default function App() {
         <Hero />
         <Countdown />
         <AboutCouple />
-        <RsvpSection />
-        <RsvpForm />
+        <MessageSection />
         <GiftSection />
         <OurStory />
         <Verse />
