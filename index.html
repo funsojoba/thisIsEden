@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="intro-active">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
@@ -7,15 +7,119 @@
     <title>This Is Eden — Tolulope &amp; Funso</title>
     <meta name="description" content="Join Tolulope and Funso as they say I do. Wedding details, our story, RSVP and gift registry." />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Intro screen assets: fetched first so the entrance shows immediately. -->
+    <link rel="preload" as="image" href="/images/intro/entrance-bg-1280.webp" type="image/webp" media="(max-width: 700px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/intro/entrance-bg-2048.webp" type="image/webp" media="(min-width: 701px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/intro/logo-750.webp" type="image/webp" fetchpriority="high" />
+
+    <!-- Inlined so the intro paints before the main stylesheet and app load. -->
+    <style>
+      .intro-active,
+      .intro-active body {
+        overflow: hidden;
+      }
+
+      .intro {
+        position: fixed;
+        inset: 0;
+        z-index: 2000;
+        display: grid;
+        place-items: center;
+        background: #011643 url('/images/intro/entrance-bg-2048.webp') center / cover no-repeat;
+        transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.55, 0, 0.45, 1);
+      }
+
+      @media (max-width: 700px) {
+        .intro {
+          background-image: url('/images/intro/entrance-bg-1280.webp');
+        }
+      }
+
+      .intro__logo {
+        width: 250px;
+        max-width: 70vw;
+        height: auto;
+        opacity: 0;
+        transform: scale(0.94);
+        transition: opacity 1.2s ease, transform 1.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .intro.is-ready .intro__logo {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Outro: the whole screen zooms in while fading away. */
+      .intro.is-leaving {
+        opacity: 0;
+        transform: scale(1.15);
+        pointer-events: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .intro,
+        .intro__logo {
+          transition: opacity 0.6s ease;
+          transform: none !important;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div id="intro" class="intro" aria-hidden="true">
+      <img class="intro__logo" src="/images/intro/logo-750.webp" alt="" width="250" height="250" fetchpriority="high" />
+    </div>
+
     <div id="root"></div>
+
+    <script>
+      // Entrance screen: wait for the background and logo (or 2.5s at most on a
+      // slow connection), hold for 5s, then zoom in and fade out.
+      (function () {
+        var HOLD_MS = 5000;
+        var MAX_WAIT_MS = 2500;
+        var OUTRO_MS = 900;
+
+        var intro = document.getElementById('intro');
+        var logo = intro.querySelector('.intro__logo');
+        var bg = new Image();
+        bg.src = window.matchMedia('(max-width: 700px)').matches
+          ? '/images/intro/entrance-bg-1280.webp'
+          : '/images/intro/entrance-bg-2048.webp';
+
+        var started = false;
+        var pending = 2;
+
+        function start() {
+          if (started) return;
+          started = true;
+          intro.classList.add('is-ready');
+          setTimeout(leave, HOLD_MS);
+        }
+
+        function loaded() {
+          pending -= 1;
+          if (pending === 0) start();
+        }
+
+        function leave() {
+          intro.classList.add('is-leaving');
+          document.documentElement.classList.remove('intro-active');
+          setTimeout(function () {
+            intro.remove();
+          }, OUTRO_MS);
+        }
+
+        [bg, logo].forEach(function (img) {
+          if (img.complete) loaded();
+          else {
+            img.addEventListener('load', loaded);
+            img.addEventListener('error', loaded);
+          }
+        });
+        setTimeout(start, MAX_WAIT_MS);
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
