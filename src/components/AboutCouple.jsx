@@ -17,9 +17,6 @@ function AboutRow({ data, imageSide, tone }) {
         <p className="script about-row__heading">{data.heading}</p>
         <div className="divider" />
         <p className="about-row__bio">{data.bio}</p>
-        <a href={data.cta.href} className="btn btn-outline-dark">
-          {data.cta.label}
-        </a>
       </div>
     </div>
   );

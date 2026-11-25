@@ -1,5 +1,5 @@
 .countdown {
-  background: linear-gradient(165deg, var(--forest) 0%, var(--forest-dark) 100%);
+  background: linear-gradient(165deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
   overflow: hidden;
 }
 
@@ -46,7 +46,7 @@
   font-family: var(--font-display);
   font-size: clamp(22px, 2.6vw, 30px);
   font-weight: 600;
-  color: var(--gold-soft);
+  color: var(--accent-soft);
   font-variant-numeric: tabular-nums;
 }
 

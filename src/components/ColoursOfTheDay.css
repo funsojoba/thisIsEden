@@ -1,0 +1,84 @@
+.colours {
+  background: var(--cream);
+}
+
+.colours__inner {
+  text-align: center;
+}
+
+.colours__heading {
+  font-size: clamp(44px, 5.5vw, 64px);
+  color: var(--primary);
+  margin-top: 14px;
+}
+
+.colours__lead {
+  font-family: var(--font-serif);
+  font-size: 19px;
+  line-height: 1.65;
+  color: var(--ink);
+  max-width: 46ch;
+  margin: 0 auto 56px;
+}
+
+.colours__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 28px);
+}
+
+.colours__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.colours__swatch {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* Paper-coloured ring plus a hairline so light swatches still read. */
+  box-shadow: 0 0 0 6px var(--paper), 0 0 0 7px var(--line), 0 18px 36px -18px rgba(1, 22, 67, 0.45);
+  margin-bottom: 18px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.colours__item:hover .colours__swatch {
+  transform: translateY(-4px) scale(1.03);
+}
+
+.colours__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.colours__hex {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: rgba(10, 21, 48, 0.55);
+}
+
+@media (max-width: 520px) {
+  .colours__swatch {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--line), 0 10px 20px -10px rgba(1, 22, 67, 0.45);
+    margin-bottom: 12px;
+  }
+
+  .colours__name {
+    font-size: 14px;
+  }
+
+  .colours__hex {
+    font-size: 10px;
+  }
+}

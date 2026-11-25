@@ -2,20 +2,21 @@
 /* Design tokens                                                          */
 /* ---------------------------------------------------------------------- */
 :root {
-  --ink: #241014;
-  --burgundy: #5c1330;
-  --burgundy-dark: #3b0c1f;
-  --burgundy-deep: #2a081a;
-  --forest: #1e3324;
-  --forest-dark: #12201a;
+  --ink: #0a1530;
+  --primary: #2365c5;
+  --primary-dark: #163f86;
+  --primary-deep: #011643;
+  --primary-night: #000b24;
   --cream: #fbf4e9;
   --cream-soft: #f2e6d3;
   --paper: #fffdf9;
-  --gold: #c9a24b;
-  --gold-soft: #e7ce95;
-  --blush: #f2d9d3;
+  --accent-brown: #9a5f35;
+  --accent: #c07e4e;
+  --accent-light: #d99a6c;
+  --accent-soft: #ffc49a;
+  --mist: #dde8f7;
   --white: #ffffff;
-  --line: rgba(36, 16, 20, 0.12);
+  --line: rgba(1, 22, 67, 0.12);
   --line-on-dark: rgba(255, 255, 255, 0.22);
 
   --font-display: 'Playfair Display', 'Georgia', serif;
@@ -92,7 +93,7 @@ button {
   font-size: 12px;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent);
 }
 
 .script {
@@ -104,7 +105,7 @@ button {
 .divider {
   width: 64px;
   height: 1px;
-  background: var(--gold);
+  background: var(--accent);
   margin: 22px 0;
 }
 
@@ -137,21 +138,21 @@ button {
 }
 
 .btn-primary {
-  background: var(--burgundy);
+  background: var(--primary);
   color: var(--cream);
 }
 
 .btn-primary:hover {
-  background: var(--burgundy-dark);
+  background: var(--primary-dark);
 }
 
 .btn-gold {
-  background: var(--gold);
-  color: var(--burgundy-deep);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  color: var(--primary-deep);
 }
 
 .btn-gold:hover {
-  background: var(--gold-soft);
+  background: var(--accent-soft);
 }
 
 .btn-outline {

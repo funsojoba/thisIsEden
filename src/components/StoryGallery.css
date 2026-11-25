@@ -9,15 +9,15 @@
 
 /* Tinted overlays — the same gradients the placeholder boxes used. */
 .story-gallery__tone--1 {
-  --tint: linear-gradient(150deg, var(--blush), var(--cream-soft));
+  --tint: linear-gradient(150deg, var(--mist), var(--cream-soft));
 }
 
 .story-gallery__tone--2 {
-  --tint: linear-gradient(150deg, var(--gold-soft), var(--cream-soft));
+  --tint: linear-gradient(150deg, var(--accent-soft), var(--cream-soft));
 }
 
 .story-gallery__tone--3 {
-  --tint: linear-gradient(150deg, var(--cream-soft), var(--gold-soft) 120%);
+  --tint: linear-gradient(150deg, var(--cream-soft), var(--accent-soft) 120%);
 }
 
 .story-gallery__slide::after,
@@ -39,12 +39,12 @@
   border-radius: 4px;
   overflow: hidden;
   background: var(--cream-soft);
-  box-shadow: 0 24px 48px -18px rgba(36, 16, 20, 0.35);
+  box-shadow: 0 24px 48px -18px rgba(1, 22, 67, 0.35);
   outline: none;
 }
 
 .story-gallery__stage:focus-visible {
-  box-shadow: 0 0 0 3px var(--gold), 0 24px 48px -18px rgba(36, 16, 20, 0.35);
+  box-shadow: 0 0 0 3px var(--accent), 0 24px 48px -18px rgba(1, 22, 67, 0.35);
 }
 
 .story-gallery__slide {
@@ -97,16 +97,16 @@
   border: 0;
   border-radius: 50%;
   background: rgba(255, 253, 249, 0.88);
-  color: var(--burgundy);
+  color: var(--primary);
   cursor: pointer;
   transform: translateY(-50%);
-  box-shadow: 0 8px 20px -8px rgba(36, 16, 20, 0.4);
+  box-shadow: 0 8px 20px -8px rgba(1, 22, 67, 0.4);
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .story-gallery__arrow:hover,
 .story-gallery__arrow:focus-visible {
-  background: var(--burgundy);
+  background: var(--primary);
   color: var(--cream);
   outline: none;
 }
@@ -136,7 +136,7 @@
   z-index: 2;
   padding: 6px 12px;
   border-radius: 999px;
-  background: rgba(42, 8, 26, 0.6);
+  background: rgba(1, 22, 67, 0.6);
   color: var(--cream);
   font-family: var(--font-display);
   font-size: 13px;
@@ -193,7 +193,7 @@
 
 .story-gallery__thumb.is-active {
   opacity: 1;
-  box-shadow: 0 0 0 2px var(--burgundy);
+  box-shadow: 0 0 0 2px var(--primary);
 }
 
 .story-gallery__thumb.is-active::after,
@@ -210,7 +210,7 @@
   display: grid;
   place-items: center;
   padding: clamp(16px, 5vw, 72px);
-  background: rgba(42, 8, 26, 0.94);
+  background: rgba(1, 22, 67, 0.94);
   animation: story-lightbox-in 0.3s ease;
 }
 

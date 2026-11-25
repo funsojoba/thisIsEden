@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0;
   overflow: hidden;
-  background: var(--forest-dark);
+  background: var(--primary-night);
 }
 
 .verse__image {
@@ -29,7 +29,7 @@
 .verse__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(18, 32, 26, 0.75) 0%, rgba(18, 32, 26, 0.35) 45%, rgba(18, 32, 26, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(0, 11, 36, 0.75) 0%, rgba(0, 11, 36, 0.35) 45%, rgba(0, 11, 36, 0.8) 100%);
 }
 
 .verse__content {
@@ -61,5 +61,5 @@
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold-soft);
+  color: var(--accent-soft);
 }

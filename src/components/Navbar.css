@@ -60,13 +60,13 @@
 .navbar__gift {
   padding: 11px 22px;
   border-radius: 999px;
-  background: var(--gold);
-  color: var(--burgundy-deep) !important;
+  background: var(--accent);
+  color: var(--primary-deep) !important;
   transition: background 0.35s ease, transform 0.35s ease;
 }
 
 .navbar__gift:hover {
-  background: var(--gold-soft);
+  background: var(--accent-soft);
   transform: translateY(-1px);
 }
 
@@ -114,7 +114,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 26px;
-    background: var(--burgundy-deep);
+    background: var(--primary-deep);
     padding: 120px 32px 48px;
     transform: translateY(-100%);
     opacity: 0;

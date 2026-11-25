@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
+import Program from './components/Program';
+import ColoursOfTheDay from './components/ColoursOfTheDay';
 import AboutCouple from './components/AboutCouple';
 import MessageSection from './components/MessageSection';
 import GiftSection from './components/GiftSection';
@@ -15,10 +17,12 @@ export default function App() {
       <main>
         <Hero />
         <Countdown />
+        <Program />
         <AboutCouple />
         <MessageSection />
         <GiftSection />
         <OurStory />
+        <ColoursOfTheDay />
         <Verse />
       </main>
       <Footer />

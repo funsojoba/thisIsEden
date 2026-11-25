@@ -19,15 +19,16 @@ export const wedding = {
   dayLabel: 'Saturday',
   dateLabel: 'Feb 5th',
   yearLabel: '2027',
-  ceremonyTime: '1:00 PM',
-  venueName: 'Whitegold Gardens',
-  venueCity: 'Ibadan, Nigeria',
+  ceremonyTime: '11:00 AM',
+  venueName: 'GLT Church Auditorium, Oba Akran, Ikeja',
+  venueCity: 'Lagos, Nigeria',
 };
 
 export const nav = [
   { label: 'Home', href: '#hero' },
   { label: 'Our Story', href: '#story' },
   { label: 'Schedule', href: '#schedule' },
+  { label: 'Program', href: '#program' },
 ];
 
 export const hero = {
@@ -42,14 +43,12 @@ export const bride = {
   heading: 'About the Bride',
   name: couple.brideFirstName,
   bio: "Tolulope is a marketing and communications expert. She is known for her creativity, empathy, and dedication to making a positive impact in the world. In her free time, she enjoys exploring new cultures, trying out new recipes, and spending quality time with loved ones.",
-  cta: { label: 'More about Tolulope', href: '#story' },
 };
 
 export const groom = {
   heading: 'About the Groom',
   name: couple.groomFirstName,
   bio: "Funso a tech bro, steady, funny when you least expect it, and fiercely loyal to the people he loves. He shows up quietly and consistently — the kind of good you only notice once you have it. Ask Tolulope, she will tell you.",
-  cta: { label: 'More about Funso', href: '#story' },
 };
 
 export const message = {
@@ -119,7 +118,44 @@ export const verse = {
 export const schedule = {
   eyebrow: 'Mark your calendar',
   heading: `${wedding.dayLabel}, ${wedding.dateLabel} ${wedding.yearLabel}`,
-  detail: `Ceremony begins at ${wedding.ceremonyTime} · ${wedding.venueName}, ${wedding.venueCity}`,
+  detail: `Church joining ${wedding.ceremonyTime} · ${wedding.venueName}, ${wedding.venueCity}`,
+};
+
+export const program = {
+  eyebrow: 'Order of the day',
+  heading: 'Program',
+  events: [
+    {
+      time: '7:50 AM',
+      title: 'Traditional Wedding',
+      venue: 'Random Event Center',
+      address: 'Ikeja, Lagos',
+    },
+    {
+      time: '11:00 AM',
+      title: 'Church Wedding',
+      venue: 'GLT Church Auditorium',
+      address: 'Oba Akran, Ikeja, Lagos',
+    },
+    {
+      time: '2:00 PM',
+      title: 'Reception',
+      venue: 'Random Event Center',
+      address: 'Ikeja, Lagos',
+    },
+  ],
+};
+
+export const colours = {
+  eyebrow: 'Dress code',
+  heading: 'Colours of the Day',
+  intro: "We'd love to see you in any of these shades as you celebrate with us.",
+  swatches: [
+    { name: 'Royal Blue', hex: '#2365C5' },
+    { name: 'Midnight Navy', hex: '#011643' },
+    { name: 'Copper', hex: '#C07E4E' },
+    { name: 'Peach', hex: '#FFC49A' },
+  ],
 };
 
 export const footer = {

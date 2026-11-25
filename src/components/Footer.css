@@ -1,5 +1,5 @@
 .site-footer {
-  background: var(--burgundy-deep);
+  background: var(--primary-deep);
   color: var(--cream);
   padding-top: clamp(56px, 8vw, 96px);
 }
@@ -15,9 +15,13 @@
 }
 
 .site-footer__mark {
-  font-size: 34px;
-  color: var(--gold-soft);
+  display: inline-block;
   margin-bottom: 14px;
+}
+
+.site-footer__mark img {
+  height: 64px;
+  width: auto;
 }
 
 .site-footer__date {
@@ -49,7 +53,7 @@
 }
 
 .site-footer__nav a:hover {
-  color: var(--gold-soft);
+  color: var(--accent-soft);
 }
 
 .site-footer__cta {

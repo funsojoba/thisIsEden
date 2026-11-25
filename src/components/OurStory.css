@@ -11,7 +11,7 @@
 
 .story__heading {
   font-size: clamp(40px, 5vw, 58px);
-  color: var(--burgundy);
+  color: var(--primary);
 }
 
 .story__lead {
@@ -57,7 +57,7 @@
   font-family: var(--font-display);
   font-size: 15px;
   font-weight: 600;
-  color: var(--gold);
+  color: var(--accent);
   padding-top: 2px;
 }
 
@@ -73,7 +73,7 @@
   height: 11px;
   border-radius: 50%;
   background: var(--cream);
-  border: 2px solid var(--burgundy);
+  border: 2px solid var(--primary);
   margin-top: 4px;
 }
 
@@ -88,7 +88,7 @@
 .story-timeline__body p {
   font-size: 15px;
   line-height: 1.6;
-  color: rgba(36, 16, 20, 0.72);
+  color: rgba(1, 22, 67, 0.72);
   max-width: 42ch;
 }
 

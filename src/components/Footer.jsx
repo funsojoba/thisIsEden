@@ -8,7 +8,9 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container site-footer__top">
         <div className="site-footer__brand">
-          <p className="script site-footer__mark">{couple.monogram}</p>
+          <a href="#hero" className="site-footer__mark" aria-label={`${couple.monogram} — back to top`}>
+            <img src="/images/logo.png" alt="" />
+          </a>
           <p className="site-footer__date">{footer.dateLine}</p>
           <p className="site-footer__address">
             {footer.addressLine1}

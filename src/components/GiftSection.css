@@ -16,7 +16,7 @@
 
 .gift__heading {
   font-size: clamp(40px, 5vw, 56px);
-  color: var(--burgundy);
+  color: var(--primary);
 }
 
 .gift__lead {
@@ -49,7 +49,7 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--accent);
   margin-bottom: 14px;
 }
 
@@ -63,7 +63,7 @@
 
 .gift-card__name {
   font-size: 14px;
-  color: rgba(36, 16, 20, 0.65);
+  color: rgba(1, 22, 67, 0.65);
   margin-bottom: 22px;
 }
 
@@ -82,7 +82,7 @@
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0.06em;
-  color: var(--burgundy);
+  color: var(--primary);
   font-variant-numeric: tabular-nums;
 }
 
@@ -94,14 +94,14 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border-radius: 999px;
-  border: 1px solid var(--burgundy);
+  border: 1px solid var(--primary);
   background: transparent;
-  color: var(--burgundy);
+  color: var(--primary);
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .gift-card__copy:hover {
-  background: var(--burgundy);
+  background: var(--primary);
   color: var(--cream);
 }
 

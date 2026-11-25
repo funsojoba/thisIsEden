@@ -26,20 +26,20 @@
 }
 
 .about-row--cream .about-row__placeholder {
-  background: linear-gradient(160deg, var(--blush) 0%, var(--cream-soft) 60%, var(--gold-soft) 100%);
+  background: linear-gradient(160deg, var(--mist) 0%, var(--cream-soft) 60%, var(--accent-soft) 100%);
 }
 
 .about-row--blush .about-row__placeholder {
-  background: linear-gradient(200deg, var(--forest) 0%, var(--burgundy) 55%, var(--burgundy-dark) 100%);
+  background: linear-gradient(200deg, var(--primary-deep) 0%, var(--primary) 55%, var(--primary-dark) 100%);
 }
 
 .about-row--blush .about-row__placeholder span {
-  color: var(--gold-soft);
+  color: var(--accent-soft);
 }
 
 .about-row__placeholder span {
   font-size: clamp(40px, 6vw, 64px);
-  color: var(--burgundy);
+  color: var(--primary);
   opacity: 0.55;
 }
 
@@ -51,12 +51,12 @@
 }
 
 .about-row--blush .about-row__copy {
-  background: var(--blush);
+  background: var(--mist);
 }
 
 .about-row__heading {
   font-size: clamp(36px, 4vw, 52px);
-  color: var(--burgundy);
+  color: var(--primary);
 }
 
 .about-row__bio {
@@ -65,7 +65,6 @@
   line-height: 1.65;
   color: var(--ink);
   max-width: 46ch;
-  margin-bottom: 34px;
 }
 
 @media (max-width: 860px) {
