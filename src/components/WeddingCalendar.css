@@ -1,0 +1,131 @@
+.wedding-calendar {
+  position: relative;
+  width: 100%;
+  padding: 34px clamp(20px, 3vw, 32px) 28px;
+  background: var(--paper);
+  border-radius: 10px;
+  border-top: 4px solid var(--accent);
+  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.55);
+  color: var(--ink);
+}
+
+/* Two binder rings across the top edge. */
+.wedding-calendar__rings {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 22%;
+  pointer-events: none;
+}
+
+.wedding-calendar__rings span {
+  width: 10px;
+  height: 26px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--accent-light), var(--accent-brown));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.wedding-calendar__sheet {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+}
+
+.wedding-calendar__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.wedding-calendar__month {
+  font-family: var(--font-script);
+  font-size: clamp(36px, 4vw, 46px);
+  line-height: 1;
+  color: var(--primary);
+}
+
+.wedding-calendar__year {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.wedding-calendar__sheet th {
+  padding: 12px 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.wedding-calendar__day {
+  height: clamp(38px, 4.2vw, 46px);
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: rgba(10, 21, 48, 0.6);
+  font-variant-numeric: tabular-nums;
+}
+
+.wedding-calendar__day.is-wedding span {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 8px 18px -6px rgba(192, 126, 78, 0.8);
+}
+
+/* Soft pulsing halo around the wedding day. */
+.wedding-calendar__day.is-wedding span::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  animation: wedding-day-pulse 2.4s ease-out infinite;
+}
+
+@keyframes wedding-day-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.wedding-calendar__caption {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--primary-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wedding-calendar__day.is-wedding span::after {
+    animation: none;
+  }
+}

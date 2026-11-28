@@ -3,34 +3,70 @@ import { gift } from '../data/content';
 import useReveal from '../hooks/useReveal';
 import './GiftSection.css';
 
-function BankCard({ account, index, copiedIndex, onCopy }) {
-  const copied = copiedIndex === index;
-
+function CopyButton({ value, copyKey, copiedKey, onCopy }) {
   return (
-    <div className="gift-card">
+    <button type="button" className="gift-card__copy" onClick={() => onCopy(value, copyKey)}>
+      {copiedKey === copyKey ? 'Copied' : 'Copy'}
+    </button>
+  );
+}
+
+// Splits a flat details list into sections at each `{ group }` marker.
+function groupDetails(details) {
+  return details.reduce((groups, row) => {
+    if (row.group) groups.push({ title: row.group, rows: [] });
+    else groups[groups.length - 1].rows.push(row);
+    return groups;
+  }, []);
+}
+
+function BankCard({ account, copiedKey, onCopy }) {
+  return (
+    <div className={`gift-card ${account.details ? 'gift-card--wire' : ''}`}>
       <span className="gift-card__label">{account.label}</span>
       <p className="gift-card__bank">{account.bankName}</p>
       <p className="gift-card__name">{account.accountName}</p>
 
-      <div className="gift-card__number-row">
-        <span className="gift-card__number">{account.accountNumber}</span>
-        <button type="button" className="gift-card__copy" onClick={() => onCopy(account.accountNumber, index)}>
-          {copied ? 'Copied' : 'Copy'}
-        </button>
-      </div>
+      {account.details ? (
+        <div className="gift-card__details">
+          {groupDetails(account.details).map((group) => (
+            <section key={group.title} className="gift-card__group">
+              <h3 className="gift-card__group-title">{group.title}</h3>
+              <dl>
+                {group.rows.map((row) => (
+                  <div key={row.label} className="gift-card__detail">
+                    <dt>{row.label}</dt>
+                    <dd>
+                      <span>{row.value}</span>
+                      {row.copy && (
+                        <CopyButton value={row.value} copyKey={`${group.title}-${row.label}`} copiedKey={copiedKey} onCopy={onCopy} />
+                      )}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          ))}
+        </div>
+      ) : (
+        <div className="gift-card__number-row">
+          <span className="gift-card__number">{account.accountNumber}</span>
+          <CopyButton value={account.accountNumber} copyKey={account.label} copiedKey={copiedKey} onCopy={onCopy} />
+        </div>
+      )}
     </div>
   );
 }
 
 export default function GiftSection() {
   const { ref, visible } = useReveal();
-  const [copiedIndex, setCopiedIndex] = useState(null);
+  const [copiedKey, setCopiedKey] = useState(null);
 
-  const handleCopy = async (value, index) => {
+  const handleCopy = async (value, key) => {
     try {
       await navigator.clipboard.writeText(value);
-      setCopiedIndex(index);
-      setTimeout(() => setCopiedIndex((current) => (current === index ? null : current)), 2000);
+      setCopiedKey(key);
+      setTimeout(() => setCopiedKey((current) => (current === key ? null : current)), 2000);
     } catch {
       // Clipboard API unavailable — the account number is still selectable/visible on the card.
     }
@@ -47,10 +83,9 @@ export default function GiftSection() {
         </div>
 
         <div className="gift__grid">
-          {gift.accounts.map((account, index) => (
-            <BankCard key={account.label} account={account} index={index} copiedIndex={copiedIndex} onCopy={handleCopy} />
+          {gift.accounts.map((account) => (
+            <BankCard key={account.label} account={account} copiedKey={copiedKey} onCopy={handleCopy} />
           ))}
-
         </div>
       </div>
     </section>

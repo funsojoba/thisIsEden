@@ -1,7 +1,7 @@
-import { schedule, wedding, message, hero } from '../data/content';
+import { schedule, wedding, message } from '../data/content';
 import useCountdown from '../hooks/useCountdown';
 import useReveal from '../hooks/useReveal';
-import PhotoFrame from './PhotoFrame';
+import WeddingCalendar from './WeddingCalendar';
 import './Countdown.css';
 
 const UNITS = [
@@ -39,8 +39,8 @@ export default function Countdown() {
           </div>
         </div>
 
-        <div className="countdown__photo">
-          <PhotoFrame src={hero.image} alt="Tolulope and Funso" tone="cream" />
+        <div className="countdown__calendar">
+          <WeddingCalendar dateISO={wedding.dateISO} caption={`${wedding.dayLabel} · Save the date`} />
         </div>
       </div>
     </section>

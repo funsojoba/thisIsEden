@@ -15,9 +15,9 @@ export const couple = {
 export const wedding = {
   // ISO string, used to drive the live countdown. Keep the timezone offset
   // accurate for your venue so the countdown lands on the right second.
-  dateISO: '2027-02-05T13:00:00+01:00',
+  dateISO: '2027-02-27T13:00:00+01:00',
   dayLabel: 'Saturday',
-  dateLabel: 'Feb 5th',
+  dateLabel: 'Feb 27th',
   yearLabel: '2027',
   ceremonyTime: '11:00 AM',
   venueName: 'GLT Church Auditorium, Oba Akran, Ikeja',
@@ -63,7 +63,7 @@ export const gift = {
   eyebrow: 'With love',
   heading: 'Send a Gift',
   intro:
-    "Honestly, having you celebrate with us is gift enough. But if you'd like to bless us a little further, you can send a cash gift to either account below.",
+    "Honestly, having you celebrate with us is gift enough. But if you'd like to bless us a little further, you can send a cash gift to either account below — local or international.",
   accounts: [
     {
       label: couple.groomFirstName,
@@ -72,10 +72,23 @@ export const gift = {
       accountNumber: '1010000821',
     },
     {
+      // International (USD) wire — routed through GTBank's correspondent bank.
       label: couple.brideFirstName,
-      bankName: 'Access Bank',
+      bankName: 'GTBank — International Transfer',
       accountName: `${couple.brideFirstName} ${couple.brideLastName}`,
-      accountNumber: '0987654321',
+      // Grouped in the order a sender's wire form asks for them.
+      details: [
+        { group: 'Beneficiary' },
+        { label: 'Account number', value: '3005428267', copy: true },
+        { label: 'For final credit of', value: 'R020633777', copy: true },
+        { label: 'Bank', value: 'Guaranty Trust Bank PLC, Lagos, Nigeria' },
+        { label: 'SWIFT code', value: 'GTBINGLA', copy: true },
+        { group: 'Intermediary bank' },
+        { label: 'Bank', value: 'Citibank, New York' },
+        { label: 'SWIFT code', value: 'CITIUS33', copy: true },
+        { label: 'Fedwire / ABA (US senders)', value: '021000089', copy: true },
+        { label: "GTBank's account no. at Citibank", value: '36129295', copy: true },
+      ],
     },
   ],
 };
