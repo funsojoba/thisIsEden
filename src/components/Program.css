@@ -148,3 +148,9 @@
     background: linear-gradient(180deg, var(--accent-brown), var(--accent-light));
   }
 }
+
+.program-event__venue .venue-link:hover,
+.program-event__venue .venue-link:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}

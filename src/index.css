@@ -202,3 +202,18 @@ button {
     scroll-behavior: auto;
   }
 }
+
+/* Venue names that open Google Maps. */
+.venue-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: currentColor;
+  transition: color 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.venue-link:hover,
+.venue-link:focus-visible {
+  color: var(--accent-soft);
+  text-decoration-color: var(--accent-soft);
+}

@@ -21,7 +21,7 @@ function ProgramEvent({ event, index }) {
             <circle cx="12" cy="9.5" r="2.5" />
           </svg>
           <span>
-            <strong>{event.venue}</strong>
+            <strong>{event.mapUrl ? <a href={event.mapUrl} target="_blank" rel="noopener noreferrer" className="venue-link">{event.venue}</a> : event.venue}</strong>
             {event.address}
           </span>
         </p>

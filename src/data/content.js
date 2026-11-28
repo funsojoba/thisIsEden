@@ -22,6 +22,7 @@ export const wedding = {
   ceremonyTime: '11:00 AM',
   venueName: 'GLT Church Auditorium, Oba Akran, Ikeja',
   venueCity: 'Lagos, Nigeria',
+  venueMapUrl: 'https://www.google.com/maps/search/?api=1&query=142%2C%20Oba%20Akran%20Avenue%2C%20Ikeja%2C%20Lagos',
 };
 
 export const nav = [
@@ -131,7 +132,7 @@ export const verse = {
 export const schedule = {
   eyebrow: 'Mark your calendar',
   heading: `${wedding.dayLabel}, ${wedding.dateLabel} ${wedding.yearLabel}`,
-  detail: `Church joining ${wedding.ceremonyTime} · ${wedding.venueName}, ${wedding.venueCity}`,
+  detail: `Church joining ${wedding.ceremonyTime}`,
 };
 
 export const program = {
@@ -148,6 +149,7 @@ export const program = {
       time: '11:00 AM',
       title: 'Church Wedding',
       venue: 'GLT Church Auditorium',
+      mapUrl: wedding.venueMapUrl,
       address: 'Oba Akran, Ikeja, Lagos',
     },
     {
@@ -174,6 +176,7 @@ export const colours = {
 export const footer = {
   addressLine1: wedding.venueName,
   addressLine2: wedding.venueCity,
+  mapUrl: wedding.venueMapUrl,
   dateLine: `${wedding.dateLabel}, ${wedding.yearLabel}`,
   links: nav,
   giftCta: { label: 'Send a Gift', href: '#gift' },

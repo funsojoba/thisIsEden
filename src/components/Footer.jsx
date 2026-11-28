@@ -12,11 +12,11 @@ export default function Footer() {
             <img src="/images/logo.png" alt="" />
           </a>
           <p className="site-footer__date">{footer.dateLine}</p>
-          <p className="site-footer__address">
+          <a href={footer.mapUrl} target="_blank" rel="noopener noreferrer" className="site-footer__address venue-link">
             {footer.addressLine1}
             <br />
             {footer.addressLine2}
-          </p>
+          </a>
         </div>
 
         <nav className="site-footer__nav">

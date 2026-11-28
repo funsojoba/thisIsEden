@@ -21,7 +21,12 @@ export default function Countdown() {
         <div ref={ref} className={`countdown__copy reveal ${visible ? 'is-visible' : ''}`}>
           <p className="eyebrow">{schedule.eyebrow}</p>
           <h2 className="countdown__heading">{schedule.heading}</h2>
-          <p className="countdown__detail">{schedule.detail}</p>
+          <p className="countdown__detail">
+            {schedule.detail} ·{' '}
+            <a href={wedding.venueMapUrl} target="_blank" rel="noopener noreferrer" className="venue-link">
+              {wedding.venueName}, {wedding.venueCity}
+            </a>
+          </p>
 
           <div className="countdown__timer" role="timer" aria-live="polite">
             {UNITS.map((unit) => (
